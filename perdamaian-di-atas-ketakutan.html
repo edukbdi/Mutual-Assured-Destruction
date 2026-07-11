@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perdamaian di Atas Ketakutan | KBDI</title>
+<meta name="description" content="Selama lebih dari setengah abad, dunia relatif damai bukan karena saling percaya, tapi karena saling menjamin bisa saling menghancurkan. Inilah logika Mutual Assured Destruction, dan kenapa fondasinya mulai retak pada 2026.">
+<link rel="icon" href="https://edukbdi.github.io/logo_KBDI/kbdi_trans.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:       #0a0e17;
+  --bg2:      #0c1120;
+  --surface:  #131a2a;
+  --surface2: #1a2336;
+  --border:   rgba(224,164,55,0.15);
+  --border2:  rgba(255,255,255,0.06);
+  --accent:   #e0a437;
+  --accent2:  #f0bd58;
+  --danger:   #cc5c3a;
+  --text:     #e8eaf0;
+  --text2:    #a5adbd;
+  --text3:    #6a7386;
+}
+html.light {
+  --bg:       #eef1f6;
+  --bg2:      #e6eaf1;
+  --surface:  #ffffff;
+  --surface2: #f2f4f9;
+  --border:   rgba(181,121,26,0.22);
+  --border2:  rgba(0,0,0,0.07);
+  --accent:   #b5791a;
+  --accent2:  #8f5d10;
+  --danger:   #b64528;
+  --text:     #1a1f2b;
+  --text2:    #3a4252;
+  --text3:    #5f6a7e;
+}
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 17px;
+  line-height: 1.8;
+  transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
+
+/* ══ HERO ══ */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  border-bottom: 3px solid rgba(224,164,55,0.32);
+  background: linear-gradient(150deg, #0a0e17 0%, #070a12 55%, #0c1220 100%);
+}
+html.light .hero {
+  background: linear-gradient(150deg, #e6ebf4 0%, #eef1f7 50%, #dbe2ef 100%);
+  border-bottom-color: rgba(181,121,26,0.4);
+}
+.hero-svg {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+}
+.hero-svg svg { width: 100%; height: 100%; display: block; }
+
+/* Peta hero */
+#hero-map {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+}
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(to top, var(--bg) 0%, rgba(10,14,23,0) 55%),
+    radial-gradient(ellipse 70% 60% at 20% 80%, rgba(10,14,23,0.85) 0%, transparent 65%);
+}
+html.light .hero-overlay {
+  background:
+    linear-gradient(to top, var(--bg) 0%, rgba(238,241,246,0) 55%),
+    radial-gradient(ellipse 70% 60% at 20% 80%, rgba(238,241,246,0.9) 0%, transparent 65%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 clamp(20px,6vw,80px) clamp(50px,8vw,80px);
+  max-width: 760px;
+  animation: fadeUp 0.8s 0.1s both;
+}
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(18px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent2); margin-bottom: 1.2rem;
+}
+.hero-eyebrow::before {
+  content: ''; display: inline-block;
+  width: 28px; height: 2px; background: var(--accent2); border-radius: 2px;
+}
+html.light .hero-eyebrow { color: #8f5d10; }
+html.light .hero-eyebrow::before { background: #8f5d10; }
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.4rem, 10vw, 7rem);
+  line-height: 0.9; letter-spacing: 0.01em;
+  color: var(--text); margin-bottom: 1rem;
+  text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+}
+html.light .hero-title { text-shadow: 0 2px 20px rgba(255,255,255,0.6); }
+.hero-title span { color: var(--accent); }
+.hero-subtitle {
+  font-family: 'Source Serif 4', serif;
+  font-size: clamp(1rem, 2.2vw, 1.22rem);
+  font-weight: 300; font-style: italic;
+  color: var(--text2); max-width: 560px;
+  margin-bottom: 2rem; line-height: 1.7;
+}
+.hero-meta { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.hero-tag {
+  display: inline-block; padding: 4px 12px;
+  border: 1px solid rgba(224,164,55,0.3); border-radius: 20px;
+  font-family: 'DM Sans', sans-serif; font-size: 0.72rem;
+  font-weight: 500; letter-spacing: 0.08em;
+  color: var(--accent2); text-transform: uppercase;
+}
+html.light .hero-tag { color: #8f5d10; border-color: rgba(143,93,16,0.35); }
+.hero-meta-item {
+  font-family: 'DM Sans', sans-serif; font-size: 0.78rem;
+  color: var(--text3); display: flex; align-items: center; gap: 6px;
+}
+.hero-meta-item svg { opacity: 0.6; }
+
+/* ══ ARTIKEL ══ */
+.article-wrap { max-width: 780px; margin: 0 auto; padding: 2.4rem 20px 3rem; }
+.section-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.9rem, 4.4vw, 2.5rem);
+  letter-spacing: 0.03em; color: var(--text);
+  margin: 2.8rem 0 1rem; padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--accent);
+  display: flex; align-items: center; gap: 14px;
+}
+.sec-icon {
+  width: 38px; height: 38px; flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(224,164,55,0.2), rgba(224,164,55,0.05));
+  border: 1px solid rgba(224,164,55,0.3); border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(224,164,55,0.1);
+  display: flex; align-items: center; justify-content: center;
+}
+.sec-icon svg { width:19px; height:19px; }
+.article-body p {
+  font-family: 'Source Serif 4', serif;
+  font-size: clamp(0.97rem, 2vw, 1.07rem);
+  font-weight: 300; color: var(--text);
+  line-height: 1.85; margin-bottom: 1.4rem;
+}
+html.light .article-body p { font-weight: 400; color: #14171f; }
+.article-body strong { font-weight: 600; color: var(--text); }
+html.light .article-body strong { color: #0c0e14; }
+.article-body em { font-style: italic; color: var(--text2); }
+html.light .article-body em { color: #2a3140; }
+.article-body p.lead::first-letter {
+  font-family: 'Bebas Neue', sans-serif;
+  float: left; font-size: 3.6rem; line-height: 0.8;
+  padding: 6px 12px 0 0; color: var(--accent);
+}
+
+.pull-quote {
+  border-left: 4px solid var(--accent);
+  background: linear-gradient(135deg, var(--surface2), var(--surface));
+  padding: 1.5rem 1.9rem; margin: 2.5rem 0;
+  border-radius: 0 12px 12px 0; position: relative;
+  box-shadow: inset 0 0 0 1px var(--border2);
+}
+.pull-quote::before {
+  content: '"'; font-family: 'Source Serif 4', serif;
+  font-size: 5rem; color: var(--accent); opacity: 0.16;
+  position: absolute; top: -8px; left: 12px; line-height: 1; pointer-events: none;
+}
+.pull-quote p {
+  font-family: 'Source Serif 4', serif;
+  font-size: clamp(1.05rem, 2.3vw, 1.18rem);
+  font-style: italic; font-weight: 300;
+  color: var(--text2) !important; line-height: 1.75; margin: 0 !important;
+}
+html.light .pull-quote p { color: #2a3140 !important; }
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(224,164,55,0.07), rgba(224,164,55,0.02));
+  border: 1px solid var(--border); border-left: 4px solid var(--accent);
+  border-radius: 0 12px 12px 0; padding: 1.4rem 1.6rem; margin: 2rem 0;
+}
+.highlight-box h4 {
+  font-family: 'DM Sans', sans-serif; font-size: 0.72rem;
+  font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent2); margin-bottom: 0.7rem;
+}
+.highlight-box p {
+  font-family: 'Source Serif 4', serif; font-size: 0.98rem;
+  font-weight: 300; color: var(--text2) !important;
+  line-height: 1.7; margin: 0 !important;
+}
+html.light .highlight-box p { color: #2a3140 !important; font-weight: 400; }
+.highlight-box strong { color: var(--accent) !important; font-weight: 600; }
+
+/* Infografis / SVG artikel */
+.infographic {
+  background: var(--surface); border: 1px solid var(--border2);
+  border-radius: 16px; padding: 24px 20px 22px; margin: 2.2rem 0; overflow: hidden;
+}
+.infographic-title {
+  font-family: 'DM Sans', sans-serif; font-size: 0.72rem;
+  font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 18px;
+  padding-bottom: 10px; border-bottom: 1px solid var(--border2);
+}
+.infographic svg { width: 100%; height: auto; display: block; }
+.infographic-cap {
+  font-family: 'DM Sans', sans-serif; font-size: 0.74rem;
+  color: var(--text3); margin-top: 14px; line-height: 1.55; text-align: center;
+}
+
+/* Override warna SVG untuk mode terang */
+html.light .infographic svg [fill="#dfe4ee"]  { fill: #1a1f2b; }
+html.light .infographic svg [stroke="#dfe4ee"]{ stroke: #1a1f2b; }
+html.light .infographic svg [fill="#8792a6"]  { fill: #5f6a7e; }
+html.light .infographic svg [stroke="#8792a6"]{ stroke: #5f6a7e; }
+html.light .infographic svg [fill="#39435a"]  { fill: #c4ccdb; }
+html.light .infographic svg [stroke="#39435a"]{ stroke: #a0aabf; }
+html.light .infographic svg [fill="#e0a437"]  { fill: #b5791a; }
+html.light .infographic svg [stroke="#e0a437"]{ stroke: #b5791a; }
+html.light .infographic svg [fill="#cc5c3a"]  { fill: #b64528; }
+html.light .infographic svg [stroke="#cc5c3a"]{ stroke: #b64528; }
+html.light .infographic svg [fill="#1c2436"]  { fill: #dde3ef; }
+html.light .infographic svg [stroke="#1c2436"]{ stroke: #c3ccdc; }
+
+/* Penutup */
+.closing {
+  background: linear-gradient(135deg, var(--surface), var(--surface2));
+  border-radius: 20px; padding: 36px 32px;
+  border: 1px solid var(--border); border-top: 3px solid var(--accent);
+  margin-top: 3rem; margin-bottom: 1.5rem; position: relative; overflow: hidden;
+}
+.closing::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 60% 50% at 80% 20%, rgba(224,164,55,0.06), transparent);
+}
+.closing-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  letter-spacing: 0.03em; color: var(--text); margin-bottom: 1rem;
+}
+.closing p {
+  font-family: 'Source Serif 4', serif; font-size: 0.99rem;
+  font-weight: 300; color: var(--text2); line-height: 1.8; margin-bottom: 1rem;
+}
+html.light .closing p { color: #2a3140; font-weight: 400; }
+.closing p:last-child { margin-bottom: 0; }
+
+.sources { padding-top: 2rem; border-top: 1px solid var(--border2); margin-top: 0.5rem; }
+.sources h3 {
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.25rem;
+  letter-spacing: 0.08em; color: var(--text3); margin-bottom: 1rem;
+}
+.sources ol { padding-left: 1.4rem; }
+.sources ol li {
+  font-family: 'DM Sans', sans-serif; font-size: 0.78rem;
+  color: var(--text3); line-height: 1.6; margin-bottom: 0.5rem;
+}
+.sources ol li a { color: var(--accent2); text-decoration: none; }
+.sources ol li a:hover { text-decoration: underline; }
+
+/* Canvas eskalasi artikel */
+#escal-map {
+  width: 100%; height: 340px; display: block; border-radius: 10px;
+}
+@media (max-width: 768px) {
+  #escal-map { height: 260px; }
+}
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+@media (max-width: 768px) {
+  .hero { min-height: 88vh; }
+  .hero-content { padding: 0 6% clamp(46px,8vw,64px); max-width: 100%; }
+  .article-wrap { padding: 2rem 6% 2rem; }
+  .closing { padding: 26px 22px; }
+  .section-heading { font-size: 1.7rem; gap: 11px; }
+  .sec-icon { width: 34px; height: 34px; }
+  .article-body p.lead::first-letter { font-size: 3rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <canvas id="hero-map"></canvas>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Hukum &amp; Politik</div>
+    <h1 class="hero-title">PERDAMAIAN<br>DI ATAS<br><span>KETAKUTAN</span></h1>
+    <p class="hero-subtitle">Selama lebih dari setengah abad, dua raksasa menahan diri dari perang total bukan karena saling percaya, melainkan karena masing-masing menjamin bisa menghancurkan yang lain sampai habis. Lalu pada 2026, rem terakhir itu dilepas.</p>
+    <div class="hero-meta">
+      <span class="hero-tag">Hukum &amp; Politik</span>
+      <span class="hero-meta-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        11 menit baca
+      </span>
+      <span class="hero-meta-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        KBDI
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ARTIKEL ══ -->
+<main class="article-wrap">
+<div class="article-body">
+
+  <div class="pull-quote reveal">
+    <p>Bagaimana mungkin senjata yang bisa memusnahkan peradaban justru dianggap sebagai penjaga perdamaian? Jawaban atas paradoks ini menopang seluruh strategi keamanan dunia sejak 1960-an, dan kini paradoks itu sedang diuji.</p>
+  </div>
+
+  <!-- S1 -->
+  <h2 class="section-heading reveal">
+    <span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e0a437" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4v16h16"/><path d="M4 14l5-4 4 3 6-6"/></svg></span>
+    Rem Terakhir Dilepas
+  </h2>
+  <p class="lead reveal">Pada 5 Februari 2026, sebuah perjanjian bernama New START resmi berakhir. Bagi kebanyakan orang, kabar ini lewat begitu saja. Padahal untuk pertama kalinya dalam lebih dari lima puluh tahun, tidak ada lagi satu pun perjanjian mengikat yang membatasi jumlah senjata nuklir strategis milik Amerika Serikat dan Rusia, dua negara yang bersama-sama menguasai hampir sembilan puluh persen seluruh hulu ledak di dunia.</p>
+  <p class="reveal">Sekretaris Jenderal Perserikatan Bangsa-Bangsa menyebut momen itu sebagai saat yang genting bagi perdamaian dan keamanan internasional. Alasannya bukan karena senjata baru mendadak diciptakan, melainkan karena satu-satunya pagar yang selama ini menjaga jumlahnya tetap terkendali kini hilang tanpa pengganti.</p>
+  <p class="reveal">Untuk memahami kenapa hilangnya selembar perjanjian bisa dianggap begitu berbahaya, kita perlu mundur ke logika aneh yang menopang seluruh sistem keamanan dunia sejak Perang Dingin. Logika bahwa keselamatan justru lahir dari jaminan kehancuran bersama.</p>
+
+  <!-- S2 -->
+  <h2 class="section-heading reveal">
+    <span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e0a437" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span>
+    Apa Itu MAD Sebenarnya
+  </h2>
+  <p class="reveal">Istilahnya <strong>Mutual Assured Destruction</strong>, atau kehancuran yang sama-sama terjamin, sering disingkat MAD. Intinya sederhana: jika dua pihak sama-sama memiliki kemampuan menghancurkan lawan secara total, maka tidak ada satu pun yang berani menyerang lebih dulu, karena serangan pertama pasti dibalas dengan serangan yang sama mematikan.</p>
+  <p class="reveal">Kunci teknisnya bukan siapa yang punya senjata terbanyak, melainkan siapa yang mampu membalas <em>setelah</em> diserang. Kemampuan ini disebut serangan balasan kedua, atau <strong>second-strike</strong>. Selama lawan yakin bahwa balasan pasti datang meski ia menyerang lebih dulu, insentif untuk menekan tombol pertama menghilang.</p>
+  <p class="reveal">Agar jaminan balasan itu kredibel, kekuatan nuklir disebar ke tiga jalur yang sulit dilumpuhkan sekaligus, yang dikenal sebagai trias nuklir. Kapal selam pengangkut rudal menjadi tulang punggungnya, karena bersembunyi di kedalaman laut dan nyaris mustahil dilacak dan dihancurkan dalam satu serangan mendadak.</p>
+
+  <div class="infographic reveal">
+    <div class="infographic-title">Trias Nuklir — Tiga Jaminan Serangan Balasan</div>
+    <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+      <line x1="40" y1="220" x2="660" y2="220" stroke="#39435a" stroke-width="1.5"/>
+      <!-- 1. Rudal darat -->
+      <g>
+        <rect x="88" y="130" width="28" height="70" rx="4" fill="#39435a"/>
+        <polygon points="88,130 102,100 116,130" fill="#e0a437"/>
+        <rect x="82" y="200" width="40" height="24" rx="3" fill="#1c2436" stroke="#39435a" stroke-width="1"/>
+        <text x="102" y="258" font-family="DM Sans,sans-serif" font-size="20" font-weight="700" fill="#dfe4ee" text-anchor="middle">Rudal Darat</text>
+        <text x="102" y="282" font-family="DM Sans,sans-serif" font-size="16" fill="#8792a6" text-anchor="middle">Silo ICBM</text>
+      </g>
+      <!-- 2. Kapal selam -->
+      <g>
+        <path d="M300 190 q55 -30 110 0 q-55 24 -110 0 Z" fill="#39435a"/>
+        <rect x="340" y="172" width="28" height="20" rx="3" fill="#39435a"/>
+        <rect x="351" y="140" width="8" height="34" fill="#e0a437"/>
+        <line x1="265" y1="165" x2="445" y2="165" stroke="#8792a6" stroke-width="1" stroke-dasharray="3,4" opacity="0.6"/>
+        <text x="355" y="258" font-family="DM Sans,sans-serif" font-size="20" font-weight="700" fill="#dfe4ee" text-anchor="middle">Kapal Selam</text>
+        <text x="355" y="282" font-family="DM Sans,sans-serif" font-size="16" fill="#8792a6" text-anchor="middle">SLBM, tersembunyi di laut</text>
+      </g>
+      <!-- 3. Pembom -->
+      <g>
+        <polygon points="558,162 624,180 558,198 574,180" fill="#39435a"/>
+        <polygon points="574,180 602,150 608,162 586,180" fill="#39435a"/>
+        <polygon points="574,180 602,210 608,198 586,180" fill="#39435a"/>
+        <circle cx="604" cy="180" r="5" fill="#e0a437"/>
+        <text x="594" y="258" font-family="DM Sans,sans-serif" font-size="20" font-weight="700" fill="#dfe4ee" text-anchor="middle">Pembom</text>
+        <text x="594" y="282" font-family="DM Sans,sans-serif" font-size="16" fill="#8792a6" text-anchor="middle">Pesawat strategis</text>
+      </g>
+      <text x="350" y="42" font-family="DM Sans,sans-serif" font-size="17" fill="#e0a437" text-anchor="middle" font-weight="600" letter-spacing="0.04em">Sebaran tiga jalur membuat serangan balasan mustahil dilumpuhkan sekaligus</text>
+    </svg>
+    <div class="infographic-cap">Sumber konsep: SIPRI Yearbook, Nuclear Information Project (FAS).</div>
+  </div>
+
+  <!-- S3 -->
+  <h2 class="section-heading reveal">
+    <span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e0a437" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></span>
+    Kelahiran Sebuah Doktrin
+  </h2>
+  <p class="reveal">MAD bukan rencana yang dirancang satu orang di satu ruangan. Ia muncul secara bertahap dari perkembangan teknologi. Ketika Amerika Serikat memonopoli bom atom pada 1945, tidak ada keseimbangan apa pun. Namun begitu Uni Soviet meledakkan bomnya sendiri pada 1949, lalu keduanya beralih ke senjata termonuklir dan rudal balistik antarbenua, situasi berubah total.</p>
+  <p class="reveal">Analis strategi Albert Wohlstetter menyebut kondisi baru itu sebagai keseimbangan teror yang rapuh. Pada 1960-an, Menteri Pertahanan Amerika Robert McNamara memformalkannya menjadi doktrin resmi bernama <em>Assured Destruction</em>, yaitu jaminan bahwa pihak mana pun yang menyerang lebih dulu tetap akan menerima kehancuran yang tidak dapat ditoleransi sebagai balasan.</p>
+  <p class="reveal">Poin pentingnya bersifat struktural: doktrin ini lahir dari logika teknologi dan strategi, bukan dari niat jahat atau kebijaksanaan luar biasa satu pemimpin. Ketika dua pihak sama-sama tidak bisa lolos dari kehancuran, keduanya terpaksa berpikir dua kali. Kengerian itulah yang, ironisnya, menjadi rem.</p>
+
+  <!-- S4 -->
+  <h2 class="section-heading reveal">
+    <span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e0a437" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+    Kenapa Kerentanan Menciptakan Stabilitas
+  </h2>
+  <p class="reveal">Di sinilah letak logika yang paling kontra-intuitif. Dalam kerangka MAD, keamanan justru bergantung pada kerentanan yang sama-sama dijamin. Selama kedua pihak sama-sama telanjang di hadapan serangan balasan, tidak ada yang tergoda memulai.</p>
+  <p class="reveal">Masalah muncul ketika salah satu pihak mulai merasa bisa selamat, misalnya dengan membangun sistem pertahanan rudal yang mampu mencegat serangan balasan. Begitu satu pihak yakin bisa menyerang lebih dulu tanpa menerima balasan setimpal, keseimbangan langsung goyah, dan justru menciptakan dorongan untuk menyerang selagi masih unggul.</p>
+  <p class="reveal">Karena itu, pada 1972, Amerika Serikat dan Uni Soviet menandatangani Perjanjian Anti-Balistic Missile yang secara sengaja <strong>membatasi pertahanan</strong> masing-masing. Terdengar gila: dua musuh sepakat untuk tetap saling rentan. Namun dari kacamata MAD, langkah itu justru menjaga stabilitas, karena tidak ada pihak yang bisa berharap menang.</p>
+
+  <div class="infographic reveal">
+    <div class="infographic-title">Logika Serangan Balasan Kedua</div>
+    <svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="700" height="320" fill="#1c2436" opacity="0.4"/>
+      <rect x="430" y="320" width="270" height="100" fill="#1c2436" opacity="0.7"/>
+      <line x1="0" y1="320" x2="700" y2="320" stroke="#39435a" stroke-width="1.5"/>
+      <!-- NEGARA A -->
+      <text x="90" y="365" font-family="DM Sans,sans-serif" font-size="19" font-weight="700" fill="#dfe4ee" text-anchor="middle">NEGARA A</text>
+      <rect x="60" y="268" width="28" height="52" fill="#39435a"/>
+      <rect x="98" y="252" width="28" height="68" fill="#39435a"/>
+      <text x="90" y="388" font-family="DM Sans,sans-serif" font-size="14" fill="#8792a6" text-anchor="middle">penyerang pertama</text>
+      <!-- NEGARA B -->
+      <text x="600" y="365" font-family="DM Sans,sans-serif" font-size="19" font-weight="700" fill="#dfe4ee" text-anchor="middle">NEGARA B</text>
+      <rect x="562" y="268" width="26" height="52" fill="#39435a" opacity="0.5"/>
+      <line x1="556" y1="264" x2="592" y2="320" stroke="#cc5c3a" stroke-width="3"/>
+      <line x1="592" y1="264" x2="556" y2="320" stroke="#cc5c3a" stroke-width="3"/>
+      <text x="572" y="252" font-family="DM Sans,sans-serif" font-size="14" fill="#cc5c3a" text-anchor="middle">hancur</text>
+      <path d="M468 358 q44 -24 90 0 q-46 20 -90 0 Z" fill="#e0a437"/>
+      <rect x="500" y="342" width="24" height="17" rx="3" fill="#e0a437"/>
+      <rect x="509" y="318" width="7" height="26" fill="#e0a437"/>
+      <text x="513" y="400" font-family="DM Sans,sans-serif" font-size="14" fill="#e0a437" text-anchor="middle" font-weight="600">kapal selam selamat</text>
+      <!-- busur -->
+      <path d="M120 252 Q360 72 560 268" fill="none" stroke="#cc5c3a" stroke-width="3" stroke-dasharray="7,6"/>
+      <polygon points="560,268 548,252 566,254" fill="#cc5c3a"/>
+      <text x="330" y="126" font-family="DM Sans,sans-serif" font-size="17" fill="#cc5c3a" text-anchor="middle" font-weight="600">1. Serangan pertama</text>
+      <path d="M512 318 Q330 158 90 250" fill="none" stroke="#e0a437" stroke-width="3"/>
+      <polygon points="90,250 104,246 100,262" fill="#e0a437"/>
+      <text x="300" y="198" font-family="DM Sans,sans-serif" font-size="17" fill="#e0a437" text-anchor="middle" font-weight="600">2. Balasan tetap datang</text>
+      <text x="350" y="34" font-family="DM Sans,sans-serif" font-size="16" fill="#8792a6" text-anchor="middle">Menyerang lebih dulu tidak menyelamatkan penyerang: balasan dari laut pasti tiba</text>
+    </svg>
+    <div class="infographic-cap">Ilustrasi logika second-strike. Selama satu jalur balasan pasti selamat, serangan pertama menjadi bunuh diri.</div>
+  </div>
+
+  <div class="highlight-box reveal">
+    <h4>Ancaman yang Kredibel</h4>
+    <p>Ekonom dan ahli teori permainan <strong>Thomas Schelling</strong> menegaskan bahwa dalam situasi seperti ini, yang menentukan bukan kekuatan mutlak, melainkan seberapa <strong>kredibel</strong> sebuah ancaman. Ancaman balasan hanya berfungsi jika lawan benar-benar percaya balasan itu akan dilaksanakan. Stabilitas MAD berdiri di atas kepercayaan gelap ini.</p>
+  </div>
+
+  <!-- S5 -->
+  <h2 class="section-heading reveal">
+    <span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e0a437" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+    Apakah MAD Benar-benar Menjaga Damai?
+  </h2>
+  <p class="reveal">Godaan terbesarnya adalah menyimpulkan bahwa karena tidak pernah ada perang langsung antar-adikuasa selama Perang Dingin, berarti MAD berhasil. Tapi ini adalah jebakan berpikir klasik: korelasi belum tentu sebab-akibat. Tidak adanya perang bisa jadi disebabkan faktor lain, bukan semata senjata nuklir.</p>
+  <p class="reveal">Sejarah juga menyimpan sejumlah momen ketika dunia nyaris jatuh ke jurang. Pada Krisis Rudal Kuba 1962, Amerika dan Uni Soviet berada di ambang perang nuklir selama berhari-hari. Pada 1983, perwira Soviet Stanislav Petrov menolak melaporkan alarm serangan rudal yang ternyata palsu, sebuah keputusan yang mungkin menyelamatkan jutaan nyawa. Pada tahun yang sama, latihan militer NATO bernama Able Archer nyaris disalahartikan Moskow sebagai persiapan serangan sungguhan.</p>
+  <p class="reveal">Sebagian ahli, seperti ilmuwan politik John Mueller, berpendapat bahwa perdamaian antar-adikuasa mungkin lebih ditopang oleh trauma Perang Dunia dan perhitungan biaya-manfaat biasa, bukan oleh nuklir. Kesimpulan yang lebih jujur mungkin begini: MAD memang bisa menstabilkan, tapi dengan harga membuat setiap kesalahan kecil, salah baca radar, salah komunikasi, atau salah paham, berpotensi menjadi kiamat.</p>
+
+  <!-- Peta Eskalasi Interaktif -->
+  <div class="infographic reveal" id="escal-wrap">
+    <div class="infographic-title">Simulasi: Skenario Eskalasi Nuklir Penuh</div>
+    <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;align-items:center;">
+      <button id="escal-play" style="font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.08em;padding:7px 18px;border-radius:6px;border:1px solid var(--accent);background:transparent;color:var(--accent);cursor:pointer;">&#9654; MULAI</button>
+      <button id="escal-reset" style="font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.08em;padding:7px 18px;border-radius:6px;border:1px solid var(--border2);background:transparent;color:var(--text3);cursor:pointer;">&#8635; ULANG</button>
+      <span id="escal-phase-label" style="font-family:'DM Sans',sans-serif;font-size:0.78rem;color:var(--accent2);margin-left:4px;"></span>
+    </div>
+    <canvas id="escal-map"></canvas>
+    <div id="escal-desc" style="font-family:'DM Sans',sans-serif;font-size:0.8rem;color:var(--text3);margin-top:12px;line-height:1.6;min-height:36px;"></div>
+    <div class="infographic-cap" style="margin-top:8px;">Simulasi ilustratif berbasis data waktu tempuh ICBM dan protokol nuklir historis. Sumber: FAS, Arms Control Association.</div>
+  </div>
+
+  <!-- S6 -->
+  <h2 class="section-heading reveal">
+    <span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e0a437" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+    Retakan di Fondasi
+  </h2>
+  <p class="reveal">Logika MAD lahir di dunia dengan dua pemain besar. Masalahnya, dunia abad ke-21 tidak lagi sesederhana itu. Menurut estimasi Stockholm International Peace Research Institute (SIPRI), China memperluas arsenalnya lebih cepat daripada negara mana pun, dari sekitar 500 menjadi sekitar 620 hulu ledak, bertambah kira-kira seratus setiap tahun, dan berpotensi melampaui seribu hulu ledak menjelang 2030.</p>
+  <p class="reveal">Ketika pemain besar bertambah dari dua menjadi tiga, matematika keseimbangan menjadi jauh lebih rumit. Ditambah lagi, pada November 2024 Rusia memperbarui doktrin nuklirnya dan memperluas situasi yang membolehkan penggunaan senjata nuklir. Teknologi baru seperti rudal hipersonik, senjata nuklir taktis berdaya ledak lebih kecil, serta dimensi siber dan kecerdasan buatan turut mempersingkat waktu pengambilan keputusan, dan waktu yang singkat adalah musuh dari kehati-hatian.</p>
+
+  <div class="infographic reveal">
+    <div class="infographic-title">Estimasi Total Hulu Ledak Nuklir per Negara</div>
+    <svg viewBox="0 0 700 370" xmlns="http://www.w3.org/2000/svg">
+      <text x="140" y="50" font-family="DM Sans,sans-serif" font-size="18" font-weight="600" fill="#dfe4ee" text-anchor="end">Rusia</text>
+      <rect x="150" y="34" width="500" height="26" rx="4" fill="#39435a"/>
+      <text x="658" y="53" font-family="DM Sans,sans-serif" font-size="17" font-weight="700" fill="#dfe4ee" text-anchor="end">5.459</text>
+
+      <text x="140" y="106" font-family="DM Sans,sans-serif" font-size="18" font-weight="600" fill="#dfe4ee" text-anchor="end">AS</text>
+      <rect x="150" y="90" width="474" height="26" rx="4" fill="#39435a"/>
+      <text x="632" y="109" font-family="DM Sans,sans-serif" font-size="17" font-weight="700" fill="#dfe4ee" text-anchor="end">5.177</text>
+
+      <text x="140" y="162" font-family="DM Sans,sans-serif" font-size="18" font-weight="600" fill="#dfe4ee" text-anchor="end">China</text>
+      <rect x="150" y="146" width="57" height="26" rx="4" fill="#e0a437"/>
+      <text x="216" y="165" font-family="DM Sans,sans-serif" font-size="17" font-weight="700" fill="#e0a437" text-anchor="start">~620 &#9650;</text>
+
+      <text x="140" y="218" font-family="DM Sans,sans-serif" font-size="18" font-weight="600" fill="#dfe4ee" text-anchor="end">Prancis</text>
+      <rect x="150" y="202" width="27" height="26" rx="4" fill="#39435a"/>
+      <text x="186" y="221" font-family="DM Sans,sans-serif" font-size="17" font-weight="600" fill="#8792a6" text-anchor="start">290</text>
+
+      <text x="140" y="274" font-family="DM Sans,sans-serif" font-size="18" font-weight="600" fill="#dfe4ee" text-anchor="end">Inggris</text>
+      <rect x="150" y="258" width="21" height="26" rx="4" fill="#39435a"/>
+      <text x="180" y="277" font-family="DM Sans,sans-serif" font-size="17" font-weight="600" fill="#8792a6" text-anchor="start">225</text>
+
+      <line x1="150" y1="308" x2="660" y2="308" stroke="#39435a" stroke-width="1" opacity="0.5"/>
+      <text x="150" y="330" font-family="DM Sans,sans-serif" font-size="15" fill="#8792a6">AS + Rusia menguasai hampir 90% dari total dunia (~12.187 hulu ledak).</text>
+      <text x="150" y="354" font-family="DM Sans,sans-serif" font-size="15" fill="#e0a437">&#9650; China tumbuh paling cepat, sekitar +100 hulu ledak per tahun.</text>
+    </svg>
+    <div class="infographic-cap">Sumber: SIPRI Yearbook 2025 dan 2026. Stok AS dan Rusia relatif stabil; angka China per Januari 2026.</div>
+  </div>
+
+  <!-- S7 -->
+  <h2 class="section-heading reveal">
+    <span class="sec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#e0a437" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg></span>
+    2026: Dunia Tanpa Pembatas
+  </h2>
+  <p class="reveal">Sekarang kita bisa kembali ke titik awal dengan konteks penuh. Selama puluhan tahun, jumlah senjata strategis kedua raksasa dijaga oleh rangkaian perjanjian, mulai dari SALT dan ABM pada 1972, START pada 1991, hingga New START yang berlaku sejak 2011. Rezim inspeksi yang memungkinkan kedua pihak saling mengintip dan memverifikasi sudah lumpuh sejak Rusia menangguhkan partisipasinya pada 2023. Kini, dengan berakhirnya New START pada Februari 2026 tanpa perjanjian pengganti, pagar terakhir itu hilang.</p>
+
+  <div class="infographic reveal">
+    <div class="infographic-title">Rangkaian Perjanjian yang Kini Berakhir</div>
+    <svg viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg">
+      <!-- Garis vertikal -->
+      <line x1="120" y1="40" x2="120" y2="490" stroke="#39435a" stroke-width="2.5"/>
+
+      <!-- 1972 -->
+      <circle cx="120" cy="80" r="11" fill="#e0a437"/>
+      <text x="148" y="76" font-family="DM Sans,sans-serif" font-size="22" font-weight="700" fill="#dfe4ee">1972</text>
+      <text x="148" y="102" font-family="DM Sans,sans-serif" font-size="17" fill="#8792a6">SALT I &amp; ABM Treaty</text>
+      <text x="148" y="122" font-family="DM Sans,sans-serif" font-size="14" fill="#6a7386">Batas peluncur pertama; larangan pertahanan rudal.</text>
+
+      <!-- 1991 -->
+      <circle cx="120" cy="200" r="11" fill="#e0a437"/>
+      <text x="148" y="196" font-family="DM Sans,sans-serif" font-size="22" font-weight="700" fill="#dfe4ee">1991</text>
+      <text x="148" y="222" font-family="DM Sans,sans-serif" font-size="17" fill="#8792a6">START I</text>
+      <text x="148" y="242" font-family="DM Sans,sans-serif" font-size="14" fill="#6a7386">Reduksi hulu ledak strategis, inspeksi lapangan.</text>
+
+      <!-- 2011 -->
+      <circle cx="120" cy="320" r="11" fill="#e0a437"/>
+      <text x="148" y="316" font-family="DM Sans,sans-serif" font-size="22" font-weight="700" fill="#dfe4ee">2011</text>
+      <text x="148" y="342" font-family="DM Sans,sans-serif" font-size="17" fill="#8792a6">New START berlaku</text>
+      <text x="148" y="362" font-family="DM Sans,sans-serif" font-size="14" fill="#6a7386">Batas 1.550 hulu ledak strategis; rezim inspeksi aktif.</text>
+
+      <!-- 2026 -->
+      <circle cx="120" cy="440" r="13" fill="#cc5c3a"/>
+      <line x1="111" y1="431" x2="129" y2="449" stroke="#0a0e17" stroke-width="2.5"/>
+      <line x1="129" y1="431" x2="111" y2="449" stroke="#0a0e17" stroke-width="2.5"/>
+      <text x="148" y="436" font-family="DM Sans,sans-serif" font-size="22" font-weight="700" fill="#cc5c3a">2026</text>
+      <text x="148" y="460" font-family="DM Sans,sans-serif" font-size="17" font-weight="700" fill="#cc5c3a">New START berakhir</text>
+      <text x="148" y="482" font-family="DM Sans,sans-serif" font-size="14" fill="#8a4030">Pertama kali sejak 1972 tanpa perjanjian pengikat.</text>
+    </svg>
+    <div class="infographic-cap">Sumber: Arms Control Association, U.S. Department of State, teks perjanjian.</div>
+  </div>
+
+  <p class="reveal">Sikap para pemimpin memperbesar ketidakpastian. Rusia sempat menawarkan untuk secara informal tetap mematuhi batas lama selama satu tahun jika Amerika melakukan hal serupa, namun respons resmi Amerika mengambang. Presiden Amerika bahkan sempat berkomentar santai bahwa jika perjanjian itu berakhir, biarlah berakhir. Satu-satunya jaring pengaman yang tersisa adalah Perjanjian Non-Proliferasi Nuklir (NPT), namun perjanjian itu tidak membatasi jumlah arsenal negara-negara pemilik senjata dan kekuatannya bersifat moral lebih dari mekanis.</p>
+
+  <!-- Penutup -->
+  <div class="closing reveal">
+    <h3 class="closing-title">Sampai Kapan Takut Bisa Menjaga Damai?</h3>
+    <p>Perdamaian yang dibangun di atas ketakutan bisa berfungsi selama tiga syarat terpenuhi. Semua pihak bertindak rasional. Semua pihak bisa saling mengintip lewat verifikasi, sehingga tidak ada yang perlu berasumsi buruk. Dan jumlah pemain tetap terbatas, sehingga keseimbangan masih bisa dihitung.</p>
+    <p>Yang terjadi pada 2026 adalah ketiga syarat itu melemah bersamaan. Verifikasi hilang, pemain besar bertambah, dan waktu pengambilan keputusan menyempit oleh teknologi. Ketika fondasi ketakutan mulai rapuh, pertanyaannya bukan lagi apakah logika lama masih berlaku, melainkan apa yang akan menggantikannya sebelum kesalahan pertama terjadi. Dan sejauh ini, belum ada jawaban.</p>
+  </div>
+
+  <div class="sources reveal">
+    <h3>Referensi &amp; Sumber</h3>
+    <ol>
+      <li>SIPRI. (2025 &amp; 2026). <em>SIPRI Yearbook: World Nuclear Forces</em>. Stockholm International Peace Research Institute. <a href="https://www.sipri.org/yearbook/2025/06" target="_blank">sipri.org</a></li>
+      <li>Federation of American Scientists. Nuclear Information Project. <a href="https://fas.org/publication/the-expiration-of-new-start/" target="_blank">fas.org</a></li>
+      <li>Arms Control Association. New START at a Glance. <a href="https://www.armscontrol.org/factsheets/new-start-glance" target="_blank">armscontrol.org</a></li>
+      <li>Council on Foreign Relations. (2026). Nukes Without Limits? A New Era After the End of New START. <a href="https://www.cfr.org/articles/nukes-without-limits-a-new-era-after-the-end-of-new-start" target="_blank">cfr.org</a></li>
+      <li>United Nations. (5 Feb 2026). Statement by the Secretary-General on the expiration of the New START Treaty. <a href="https://www.un.org/sg/en/content/sg/statements/2026-02-05" target="_blank">un.org</a></li>
+      <li>Congressional Research Service. U.S.-Russian Nuclear Arms Control: Overview and Considerations. <a href="https://www.congress.gov/crs-product/IN12640" target="_blank">congress.gov</a></li>
+      <li>ICAN. (2026). The expiration of New START: what it means and what's next. <a href="https://www.icanw.org/new_start_expiration" target="_blank">icanw.org</a></li>
+      <li>Schelling, T. C. (1960). <em>The Strategy of Conflict</em>. Harvard University Press.</li>
+      <li>Wohlstetter, A. (1959). The Delicate Balance of Terror. <em>Foreign Affairs</em>.</li>
+    </ol>
+  </div>
+
+</div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+<script>
+/* ══════════════════════════════════════
+   HERO MAP — fix mobile zoom
+══════════════════════════════════════ */
+(function(){
+  const cv=document.getElementById('hero-map');
+  if(!cv)return;
+  const cx=cv.getContext('2d');
+  const mob=()=>window.innerWidth<=768;
+  const isL=()=>document.documentElement.classList.contains('light');
+
+  function C(){return isL()?{
+    ocean:'#cdd8e8',land:'#b8c8d8',shore:'#96acc0',grid:'rgba(80,110,140,0.1)',
+    usHL:'rgba(40,90,180,0.22)',soHL:'rgba(180,40,40,0.22)',
+    usArc:'rgba(40,100,200,0.9)',soArc:'rgba(200,50,50,0.9)',
+    usDot:'#1a5bbf',soDot:'#bf1a1a',usLbl:'#0a306e',soLbl:'#6e0a0a',txt:'rgba(0,0,0,0.5)',
+  }:{
+    ocean:'#070b14',land:'#182036',shore:'#253250',grid:'rgba(255,255,255,0.04)',
+    usHL:'rgba(60,130,220,0.15)',soHL:'rgba(220,60,60,0.15)',
+    usArc:'rgba(80,160,255,0.9)',soArc:'rgba(255,80,80,0.9)',
+    usDot:'#5ab0ff',soDot:'#ff6060',usLbl:'#88ccff',soLbl:'#ff9999',txt:'rgba(255,255,255,0.4)',
+  };}
+
+  const US_IDS=new Set([840,124,484]);
+  const SO_IDS=new Set([643,112,804,398,860,795,31,51,268,498,440,428,233]);
+  const US=[{c:[-77.0,38.9],t:'cmd'},{c:[-104.8,38.8],t:'cmd'},{c:[-101.3,48.4],t:'icbm'},{c:[-111.1,47.5],t:'icbm'},{c:[-104.9,41.1],t:'icbm'},{c:[-93.5,38.7],t:'bomber'},{c:[-93.7,32.5],t:'bomber'},{c:[-4.9,55.9],t:'sub'},{c:[-6.4,36.6],t:'sub'},{c:[72.4,-7.3],t:'sub'}];
+  const SO=[{c:[37.6,55.75],t:'cmd'},{c:[40.1,62.7],t:'icbm'},{c:[45.8,48.5],t:'icbm'},{c:[63.3,45.6],t:'icbm'},{c:[30.8,48.1],t:'icbm'},{c:[46.2,51.4],t:'bomber'},{c:[134.2,51.7],t:'bomber'},{c:[33.1,68.9],t:'sub'},{c:[131.9,43.1],t:'sub'},{c:[33.4,69.1],t:'sub'}];
+  const ARCS=[{f:[-104.8,38.8],t:[37.6,55.75],s:'us'},{f:[-101.3,48.4],t:[40.1,62.7],s:'us'},{f:[-111.1,47.5],t:[63.3,45.6],s:'us'},{f:[37.6,55.75],t:[-77.0,38.9],s:'so'},{f:[40.1,62.7],t:[-104.9,41.1],s:'so'},{f:[63.3,45.6],t:[-93.5,38.7],s:'so'}];
+  let proj,path,grat,world=null,arcT=0,pulse=0;
+
+  function resize(){cv.width=cv.parentElement.offsetWidth;cv.height=cv.parentElement.offsetHeight;}
+  function buildProj(){
+    const W=cv.width,H=cv.height;
+    if(mob()){
+      /* Natural Earth fokus belahan utara, sama dengan peta eskalasi */
+      proj=d3.geoNaturalEarth1().scale(W*0.3).center([15,52]).translate([W*0.47,H*0.5]);
+    } else {
+      proj=d3.geoNaturalEarth1().scale(W*0.2).center([15,42]).translate([W*0.46,H*0.52]);
+    }
+    path=d3.geoPath(proj,cx);grat=d3.geoGraticule().step([20,20])();
+  }
+  function draw(){
+    const c=C();cx.clearRect(0,0,cv.width,cv.height);if(!world)return;
+    cx.beginPath();path({type:'Sphere'});cx.fillStyle=c.ocean;cx.fill();
+    cx.beginPath();path(grat);cx.strokeStyle=c.grid;cx.lineWidth=0.7;cx.stroke();
+    cx.beginPath();world.features.filter(f=>!US_IDS.has(+f.id)&&!SO_IDS.has(+f.id)).forEach(f=>path(f));
+    cx.fillStyle=c.land;cx.fill();cx.strokeStyle=c.shore;cx.lineWidth=0.5;cx.stroke();
+    cx.beginPath();world.features.filter(f=>US_IDS.has(+f.id)).forEach(f=>path(f));
+    cx.fillStyle=c.usHL;cx.fill();cx.strokeStyle=c.shore;cx.lineWidth=0.6;cx.stroke();
+    cx.beginPath();world.features.filter(f=>SO_IDS.has(+f.id)).forEach(f=>path(f));
+    cx.fillStyle=c.soHL;cx.fill();cx.strokeStyle=c.shore;cx.lineWidth=0.6;cx.stroke();
+    ARCS.forEach((arc,i)=>{
+      const pF=proj(arc.f),pT=proj(arc.t);if(!pF||!pT)return;
+      const col=arc.s==='us'?c.usArc:c.soArc;
+      const mx=(pF[0]+pT[0])/2,my=(pF[1]+pT[1])/2-Math.hypot(pT[0]-pF[0],pT[1]-pF[1])*0.4;
+      cx.beginPath();cx.moveTo(pF[0],pF[1]);cx.quadraticCurveTo(mx,my,pT[0],pT[1]);
+      cx.strokeStyle=col.replace(/[\d.]+\)$/,'0.1)');cx.lineWidth=1;cx.setLineDash([5,7]);cx.stroke();cx.setLineDash([]);
+      const t=((arcT+i/ARCS.length)%1);
+      const qx=(1-t)*(1-t)*pF[0]+2*(1-t)*t*mx+t*t*pT[0],qy=(1-t)*(1-t)*pF[1]+2*(1-t)*t*my+t*t*pT[1];
+      for(let j=8;j>=1;j--){const tj=Math.max(0,t-j*0.014);const ex=(1-tj)*(1-tj)*pF[0]+2*(1-tj)*tj*mx+tj*tj*pT[0],ey=(1-tj)*(1-tj)*pF[1]+2*(1-tj)*tj*my+tj*tj*pT[1];cx.beginPath();cx.arc(ex,ey,Math.max(0.5,3.2-j*0.3),0,Math.PI*2);cx.fillStyle=col.replace(/[\d.]+\)$/,`${Math.max(0,0.06-j*0.007)})`) ;cx.fill();}
+      const gr=cx.createRadialGradient(qx,qy,0,qx,qy,8);gr.addColorStop(0,col.replace(/[\d.]+\)$/,'1)'));gr.addColorStop(1,col.replace(/[\d.]+\)$/,'0)'));
+      cx.beginPath();cx.arc(qx,qy,5,0,Math.PI*2);cx.fillStyle=gr;cx.fill();
+    });
+    const p=0.5+0.5*Math.sin(pulse);
+    function drawSites(sites,col){sites.forEach(s=>{const xy=proj(s.c);if(!xy)return;const[x,y]=xy,r=s.t==='cmd'?9:s.t==='icbm'?6.5:5;cx.beginPath();cx.arc(x,y,r+p*5,0,Math.PI*2);cx.fillStyle=col+'22';cx.fill();cx.beginPath();cx.arc(x,y,r*0.6,0,Math.PI*2);cx.fillStyle=col;cx.fill();cx.fillStyle='#fff';cx.font=`bold ${r*1.1}px sans-serif`;cx.textAlign='center';cx.textBaseline='middle';cx.fillText(s.t==='cmd'?'★':s.t==='icbm'?'▲':s.t==='bomber'?'✦':'◉',x,y);});}
+    drawSites(US,c.usDot);drawSites(SO,c.soDot);
+    if(!mob()){
+      function lbl(t,lon,lat,col){const xy=proj([lon,lat]);if(!xy)return;cx.font='bold 13px "DM Sans",sans-serif';cx.textAlign='center';cx.textBaseline='middle';cx.fillStyle=col;cx.globalAlpha=0.8;cx.fillText(t,xy[0],xy[1]);cx.globalAlpha=1;}
+      lbl('AMERIKA SERIKAT',-100,39,c.usLbl);lbl('UNI SOVIET',65,58,c.soLbl);
+      const lx=14,ly=14;cx.font='10px "DM Sans",sans-serif';cx.textAlign='left';cx.textBaseline='middle';
+      [[c.usDot,'Amerika Serikat'],[c.soDot,'Uni Soviet']].forEach(([col,t],i)=>{cx.beginPath();cx.arc(lx+5,ly+12+i*18,5,0,Math.PI*2);cx.fillStyle=col;cx.fill();cx.fillStyle=c.txt;cx.fillText(t,lx+14,ly+12+i*18);});
+      [['★','Komando'],['▲','Silo ICBM'],['✦','Pembom'],['◉','Kapal Selam']].forEach(([ic,t],k)=>{cx.fillStyle=c.txt;cx.fillText(ic+'  '+t,lx,ly+52+k*15);});
+    }
+  }
+  function tick(){arcT=(arcT+0.0018)%1;pulse=(pulse+0.045)%(Math.PI*2);draw();requestAnimationFrame(tick);}
+  async function init(){
+    resize();buildProj();
+    try{const topo=await d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');window.__kbdiWorld=topojson.feature(topo,topo.objects.countries);}catch(e){window.__kbdiWorld={type:'FeatureCollection',features:[]};}
+    world=window.__kbdiWorld;tick();
+  }
+  window.addEventListener('resize',()=>{resize();buildProj();});
+  new MutationObserver(()=>draw()).observe(document.documentElement,{attributeFilter:['class']});
+  init();
+})();
+
+
+/* ══════════════════════════════════════
+   SIMULASI ESKALASI NUKLIR MULTIPOLAR
+══════════════════════════════════════ */
+(function(){
+  const cv=document.getElementById('escal-map');if(!cv)return;
+  const cx=cv.getContext('2d');
+  const isL=()=>document.documentElement.classList.contains('light');
+
+  /* ── Definisi pihak ── */
+  const SIDES={
+    us:   {col:'rgba(80,160,255,',  dot:'#5ab0ff', lbl:'#88ccff', name:'Amerika Serikat'},
+    ru:   {col:'rgba(255,80,80,',   dot:'#ff6060', lbl:'#ff9999', name:'Rusia/Soviet'},
+    nato: {col:'rgba(80,220,160,',  dot:'#50dc99', lbl:'#90ffcc', name:'NATO (UK+Prancis)'},
+    cn:   {col:'rgba(255,200,50,',  dot:'#ffc832', lbl:'#ffe080', name:'China'},
+  };
+
+  /* ── Titik siaga ── */
+  const SITES=[
+    /* AS */
+    {c:[-104.8,38.8],t:'cmd',s:'us'},{c:[-101.3,48.4],t:'icbm',s:'us'},{c:[-111.1,47.5],t:'icbm',s:'us'},
+    {c:[-104.9,41.1],t:'icbm',s:'us'},{c:[-93.7,32.5],t:'bomber',s:'us'},{c:[-4.9,55.9],t:'sub',s:'us'},
+    {c:[-30,48],t:'sub',s:'us'},{c:[-60,45],t:'sub',s:'us'},          /* kapal selam di Atlantik */
+    /* Rusia */
+    {c:[37.6,55.75],t:'cmd',s:'ru'},{c:[40.1,62.7],t:'icbm',s:'ru'},{c:[63.3,45.6],t:'icbm',s:'ru'},
+    {c:[46.2,51.4],t:'bomber',s:'ru'},{c:[134.2,51.7],t:'bomber',s:'ru'},
+    {c:[33.1,68.9],t:'sub',s:'ru'},{c:[0,75],t:'sub',s:'ru'},          /* kapal selam Arktik */
+    /* NATO (Inggris, Prancis) */
+    {c:[-3.2,55.8],t:'sub',s:'nato'},{c:[-4.2,50.4],t:'bomber',s:'nato'},
+    {c:[2.3,48.8],t:'icbm',s:'nato'},{c:[-20,52],t:'sub',s:'nato'},    /* kapal selam Atlantik */
+    /* China */
+    {c:[116.4,39.9],t:'cmd',s:'cn'},{c:[104,35],t:'icbm',s:'cn'},{c:[91,30],t:'icbm',s:'cn'},
+    {c:[110,22],t:'sub',s:'cn'},{c:[128,30],t:'sub',s:'cn'},
+  ];
+
+  /* ── Fase simulasi ── */
+  const PHASES=[
+    {id:'standby', label:'FASE 0: Siaga Multipolar',      dur:160,
+     desc:'Lima kekuatan nuklir dalam siaga 24 jam. Kapal selam tersebar di samudra. Pembom berputar di udara. Tidak ada momen tanpa kewaspadaan.'},
+    {id:'detect',  label:'FASE 1: Deteksi dan Otorisasi', dur:140,
+     desc:'Radar mendeteksi peluncuran. Alarm berbunyi di Washington, Moskow, London, Paris, dan Beijing. Para presiden punya kurang dari 10 menit untuk memutuskan.'},
+    {id:'launch',  label:'FASE 2: Peluncuran Serentak',   dur:9999,
+     desc:'ICBM dari silo, SLBM dari kapal selam, dan pembom strategis B-52/Tu-95 diluncurkan bersamaan dari semua pihak. Tidak ada penarikan kembali.'},
+    {id:'impact',  label:'FASE 3: Kehancuran Total',       dur:220,
+     desc:'Hulu ledak menghantam target di semua benua. MAD terbukti: tidak ada pemenang. Peradaban yang dibangun ribuan tahun berakhir dalam hitungan menit.'},
+  ];
+
+  /* Target kota per pihak */
+  const TARGETS={
+    us: [[-77.0,38.9],[-87.6,41.8],[-118.2,34.0],[-73.9,40.7],[-122.3,37.8]],
+    ru: [[37.6,55.75],[30.3,59.9],[50.2,53.2],[82.9,54.9],[60.6,56.8]],
+    nato:[[-0.1,51.5],[2.3,48.8],[-3.7,40.4],[4.9,52.4]],
+    cn:  [[116.4,39.9],[121.5,31.2],[113.3,23.1],[104.1,30.6],[126.6,45.7]],
+  };
+
+  /* Pasangan peluncuran per fase */
+  const LAUNCH_ICBM=[
+    {f:[-101.3,48.4],t:[37.6,55.75],fs:'us',ts:'ru'},{f:[-111.1,47.5],t:[40.1,62.7],fs:'us',ts:'ru'},
+    {f:[40.1,62.7],t:[-77.0,38.9],fs:'ru',ts:'us'},{f:[63.3,45.6],t:[-87.6,41.8],fs:'ru',ts:'us'},
+    {f:[2.3,48.8],t:[37.6,55.75],fs:'nato',ts:'ru'},{f:[-4.2,50.4],t:[63.3,45.6],fs:'nato',ts:'ru'},
+    {f:[104,35],t:[-77.0,38.9],fs:'cn',ts:'us'},{f:[91,30],t:[-87.6,41.8],fs:'cn',ts:'us'},
+  ];
+  const LAUNCH_SLBM=[
+    {f:[-30,48],t:[37.6,55.75],fs:'us',ts:'ru'},{f:[-60,45],t:[50.2,53.2],fs:'us',ts:'ru'},
+    {f:[0,75],t:[-77.0,38.9],fs:'ru',ts:'us'},{f:[33.1,68.9],t:[-87.6,41.8],fs:'ru',ts:'us'},
+    {f:[-20,52],t:[40.1,62.7],fs:'nato',ts:'ru'},
+    {f:[128,30],t:[-118.2,34.0],fs:'cn',ts:'us'},{f:[110,22],t:[-73.9,40.7],fs:'cn',ts:'us'},
+  ];
+  const LAUNCH_BOMBER=[
+    {f:[-93.7,32.5],t:[82.9,54.9],fs:'us',ts:'ru'},{f:[-93.7,32.5],t:[116.4,39.9],fs:'us',ts:'cn'},
+    {f:[46.2,51.4],t:[-87.6,41.8],fs:'ru',ts:'us'},{f:[134.2,51.7],t:[-77.0,38.9],fs:'ru',ts:'us'},
+    {f:[-4.2,50.4],t:[37.6,55.75],fs:'nato',ts:'ru'},
+    {f:[104,35],t:[2.3,48.8],fs:'cn',ts:'nato'},
+  ];
+
+  const US_IDS=new Set([840,124,484]);
+  const SO_IDS=new Set([643,112,804,398,860,795,31,51,268,498,440,428,233]);
+  const CN_IDS=new Set([156]);
+  const NATO_IDS=new Set([826,250]);
+
+  let proj,path,grat,world=null;
+  let phaseIdx=0,phaseT=0,playing=false,lastTs=null;
+  let particles=[],explosions=[],bombers=[];
+
+  const playBtn=document.getElementById('escal-play');
+  const resetBtn=document.getElementById('escal-reset');
+  const descEl=document.getElementById('escal-desc');
+  const lblEl=document.getElementById('escal-phase-label');
+
+  function C(){return isL()?{
+    ocean:'#d0dcea',land:'#b8c8d8',shore:'#96acc0',
+    usHL:'rgba(40,90,180,0.18)',ruHL:'rgba(180,40,40,0.18)',
+    natHL:'rgba(40,180,120,0.18)',cnHL:'rgba(200,160,30,0.18)',
+    txt:'#444',
+  }:{
+    ocean:'#07090f',land:'#16203a',shore:'#22304e',
+    usHL:'rgba(60,130,220,0.15)',ruHL:'rgba(220,60,60,0.15)',
+    natHL:'rgba(60,200,140,0.15)',cnHL:'rgba(200,160,40,0.15)',
+    txt:'#ccc',
+  };}
+
+  function resize(){
+    const w=document.getElementById('escal-wrap');
+    cv.width=(w?w.offsetWidth:600)-2;
+    cv.height=window.innerWidth<=768?300:380;
+  }
+  function buildProj(){
+    const W=cv.width,H=cv.height;
+    const mob=window.innerWidth<=768;
+    /* Natural Earth fokus belahan utara: center di lintang 45°N, scale lebih besar */
+    proj=d3.geoNaturalEarth1()
+      .scale(mob ? W*0.28 : W*0.25)
+      .center([15, 52])
+      .translate([W*0.47, H*0.52]);
+    path=d3.geoPath(proj,cx);grat=d3.geoGraticule().step([30,30])();
+  }
+
+  function drawBase(){
+    const c=C();
+    cx.clearRect(0,0,cv.width,cv.height);if(!world)return;
+    cx.beginPath();path({type:'Sphere'});cx.fillStyle=c.ocean;cx.fill();
+    cx.beginPath();path(grat);cx.strokeStyle=isL()?'rgba(80,110,140,0.1)':'rgba(255,255,255,0.04)';cx.lineWidth=0.6;cx.stroke();
+    /* Daratan netral */
+    cx.beginPath();world.features.filter(f=>!US_IDS.has(+f.id)&&!SO_IDS.has(+f.id)&&!CN_IDS.has(+f.id)&&!NATO_IDS.has(+f.id)).forEach(f=>path(f));
+    cx.fillStyle=c.land;cx.fill();cx.strokeStyle=c.shore;cx.lineWidth=0.4;cx.stroke();
+    /* Highlight per blok */
+    const hl=[
+      [US_IDS,c.usHL],[SO_IDS,c.ruHL],[CN_IDS,c.cnHL],[NATO_IDS,c.natHL],
+    ];
+    hl.forEach(([ids,fill])=>{
+      cx.beginPath();world.features.filter(f=>ids.has(+f.id)).forEach(f=>path(f));
+      cx.fillStyle=fill;cx.fill();cx.strokeStyle=c.shore;cx.lineWidth=0.4;cx.stroke();
+    });
+    /* Label */
+    const fz=window.innerWidth<=768?9:11;
+    [['AS',-95,38,SIDES.us.lbl],['RUSIA',65,57,SIDES.ru.lbl],['CHINA',103,34,SIDES.cn.lbl],['UK/FR',-1,53,SIDES.nato.lbl]].forEach(([t,lon,lat,col])=>{
+      const xy=proj([lon,lat]);if(!xy)return;
+      cx.font=`bold ${fz}px "DM Sans",sans-serif`;cx.textAlign='center';cx.textBaseline='middle';cx.fillStyle=col;cx.globalAlpha=0.7;cx.fillText(t,xy[0],xy[1]);cx.globalAlpha=1;
+    });
+  }
+
+  /* Helper: buat partikel busur dari array pasangan */
+  function spawnArcs(pairs,baseSpd){
+    const spd=baseSpd||0.0022;
+    pairs.forEach((p,i)=>{
+      const pF=proj(p.f),pT=proj(p.t);if(!pF||!pT)return;
+      const s=SIDES[p.fs];
+      /* Sedikit offset waktu mulai supaya tidak serempak persis, tapi semua selesai berdekatan */
+      const delay=i*0.04;
+      particles.push({x0:pF[0],y0:pF[1],x1:pT[0],y1:pT[1],x:pF[0],y:pF[1],
+        t:-delay,done:false,spd,col:s.col,dot:s.dot,targetSide:p.ts});
+    });
+  }
+
+  /* Helper: buat pembom bergerak lambat */
+  function spawnBombers(pairs){
+    pairs.forEach((p,i)=>{
+      const pF=proj(p.f),pT=proj(p.t);if(!pF||!pT)return;
+      const s=SIDES[p.fs];
+      const delay=i*0.06;
+      bombers.push({x0:pF[0],y0:pF[1],x1:pT[0],y1:pT[1],x:pF[0],y:pF[1],
+        t:-delay,done:false,spd:0.0012,col:s.col,dot:s.dot,targetSide:p.ts});
+    });
+  }
+
+  function drawParticle(p){
+    if(p.t<0)return; /* masih dalam jeda awal */
+    if(p.t>=1&&!p.done){
+      p.done=true;
+      const maxR=phaseIdx>=5?32:20;
+      explosions.push({x:p.x1,y:p.y1,r:0,mr:maxR,col:p.col,life:1});
+      return;
+    }
+    const mx=(p.x0+p.x1)/2,my=(p.y0+p.y1)/2-Math.hypot(p.x1-p.x0,p.y1-p.y0)*0.42;
+    const t=Math.min(Math.max(p.t,0),0.9999);
+    p.x=(1-t)*(1-t)*p.x0+2*(1-t)*t*mx+t*t*p.x1;
+    p.y=(1-t)*(1-t)*p.y0+2*(1-t)*t*my+t*t*p.y1;
+    for(let j=7;j>=1;j--){
+      const tj=Math.max(0,t-j*0.015);
+      const ex=(1-tj)*(1-tj)*p.x0+2*(1-tj)*tj*mx+tj*tj*p.x1;
+      const ey=(1-tj)*(1-tj)*p.y0+2*(1-tj)*tj*my+tj*tj*p.y1;
+      cx.beginPath();cx.arc(ex,ey,Math.max(0.4,2.8-j*0.3),0,Math.PI*2);
+      cx.fillStyle=p.col+`${Math.max(0,0.06-j*0.007)})`;cx.fill();
+    }
+    const gr=cx.createRadialGradient(p.x,p.y,0,p.x,p.y,7);
+    gr.addColorStop(0,p.col+'1)');gr.addColorStop(1,p.col+'0)');
+    cx.beginPath();cx.arc(p.x,p.y,4,0,Math.PI*2);cx.fillStyle=gr;cx.fill();
+  }
+
+  function drawBomber(b){
+    if(b.t<0)return; /* masih dalam jeda awal */
+    if(b.t>=1&&!b.done){b.done=true;explosions.push({x:b.x1,y:b.y1,r:0,mr:18,col:b.col,life:1});return;}
+    const t=Math.min(Math.max(b.t,0),0.9999);
+    b.x=b.x0+(b.x1-b.x0)*t;b.y=b.y0+(b.y1-b.y0)*t;
+    const ang=Math.atan2(b.y1-b.y0,b.x1-b.x0);
+    cx.save();cx.translate(b.x,b.y);cx.rotate(ang);
+    cx.fillStyle=b.dot;
+    cx.beginPath();cx.moveTo(8,0);cx.lineTo(-5,4);cx.lineTo(-3,0);cx.lineTo(-5,-4);cx.closePath();cx.fill();
+    cx.restore();
+  }
+
+  function drawSites(pulse){
+    SITES.forEach(s=>{
+      const xy=proj(s.c);if(!xy)return;
+      const[x,y]=xy,sd=SIDES[s.s],r=s.t==='cmd'?8:s.t==='icbm'?5.5:s.t==='bomber'?5:4.5;
+      cx.beginPath();cx.arc(x,y,r+pulse*4,0,Math.PI*2);cx.fillStyle=sd.dot+'22';cx.fill();
+      cx.beginPath();cx.arc(x,y,r*0.6,0,Math.PI*2);cx.fillStyle=sd.dot;cx.fill();
+      cx.fillStyle='#fff';cx.font=`bold ${r*1.1}px sans-serif`;cx.textAlign='center';cx.textBaseline='middle';
+      cx.fillText(s.t==='cmd'?'★':s.t==='icbm'?'▲':s.t==='bomber'?'✦':'◉',x,y);
+    });
+  }
+
+  function drawExplosions(){
+    explosions.forEach(e=>{
+      e.r=Math.min(e.r+1.1,e.mr);e.life=Math.max(0,e.life-0.02);
+      const gr=cx.createRadialGradient(e.x,e.y,0,e.x,e.y,e.r);
+      gr.addColorStop(0,e.col+`${e.life})`);gr.addColorStop(0.5,e.col+`${e.life*0.5})`);gr.addColorStop(1,e.col+'0)');
+      cx.beginPath();cx.arc(e.x,e.y,e.r,0,Math.PI*2);cx.fillStyle=gr;cx.fill();
+    });
+    explosions=explosions.filter(e=>e.life>0);
+  }
+
+  function drawImpactOverlay(){
+    const prog=Math.min(1,phaseT/120);
+    cx.fillStyle=`rgba(60,5,5,${prog*0.5})`;cx.fillRect(0,0,cv.width,cv.height);
+    Object.values(TARGETS).forEach(tgts=>{
+      tgts.forEach((coord,i)=>{
+        const xy=proj(coord);if(!xy)return;
+        const[x,y]=xy,del=i*8,r=Math.max(0,Math.min(26,(phaseT-del)*0.5));
+        if(r<=0)return;
+        const gr=cx.createRadialGradient(x,y,0,x,y,r);
+        gr.addColorStop(0,`rgba(255,140,30,${0.9*prog})`);
+        gr.addColorStop(0.5,`rgba(200,40,10,${0.6*prog})`);
+        gr.addColorStop(1,'rgba(80,10,10,0)');
+        cx.beginPath();cx.arc(x,y,r,0,Math.PI*2);cx.fillStyle=gr;cx.fill();
+      });
+    });
+    cx.font='bold 13px "DM Sans",sans-serif';cx.textAlign='center';
+    cx.fillStyle=`rgba(255,80,40,${Math.min(1,prog*2.5)})`;
+    cx.fillText('KEHANCURAN TOTAL — TIDAK ADA PEMENANG',cv.width/2,18);
+  }
+
+  function drawLegend(){
+    if(window.innerWidth<=768)return;
+    const lx=10,ly=10,fz=10;
+    cx.font=`${fz}px "DM Sans",sans-serif`;cx.textAlign='left';cx.textBaseline='middle';
+    Object.entries(SIDES).forEach(([k,v],i)=>{
+      cx.beginPath();cx.arc(lx+5,ly+10+i*16,4.5,0,Math.PI*2);cx.fillStyle=v.dot;cx.fill();
+      cx.fillStyle=isL()?'#333':'#aaa';cx.fillText(v.name,lx+14,ly+10+i*16);
+    });
+  }
+
+  let pulseT=0;
+  function tick(ts){
+    if(!lastTs)lastTs=ts;
+    const dt=(ts-lastTs)/16.67;lastTs=ts;
+    pulseT=(pulseT+0.05)%(Math.PI*2);
+    const pulse=0.5+0.5*Math.sin(pulseT);
+    drawBase();
+    const ph=PHASES[phaseIdx];
+    if(ph.id==='standby'||ph.id==='detect'){
+      drawSites(pulse);
+      if(ph.id==='detect'){
+        cx.font='bold 12px "DM Sans",sans-serif';cx.textAlign='center';
+        cx.fillStyle=`rgba(255,220,50,${0.6+0.4*Math.sin(pulseT*3)})`;
+        cx.fillText('ALARM TERDETEKSI DI SEMUA PUSAT KOMANDO',cv.width/2,16);
+      }
+    } else if(ph.id==='launch'){
+      drawSites(pulse*0.4);
+      particles.forEach(p=>{if(!p.done)p.t+=dt*p.spd;drawParticle(p);});
+      bombers.forEach(b=>{if(!b.done)b.t+=dt*b.spd;drawBomber(b);});
+      drawExplosions();
+    } else if(ph.id==='impact'){
+      drawImpactOverlay();
+      drawExplosions();
+    }
+    drawLegend();
+    if(playing){
+      const ph=PHASES[phaseIdx];
+      if(ph.id==='standby'||ph.id==='detect'){
+        phaseT+=dt;
+        if(phaseT>=ph.dur){phaseT=0;phaseIdx++;onPhase();}
+      } else if(ph.id==='launch'){
+        const allDone=particles.every(p=>p.done)&&bombers.every(b=>b.done);
+        if(allDone){
+          phaseT+=dt;
+          if(phaseT>=80){phaseT=0;phaseIdx++;onPhase();}
+        }
+      } else if(ph.id==='impact'){
+        phaseT+=dt;
+        if(phaseT>=ph.dur){playing=false;if(playBtn)playBtn.textContent='✓ SELESAI';}
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function onPhase(){
+    const ph=PHASES[phaseIdx];
+    if(lblEl)lblEl.textContent=ph.label;
+    if(descEl)descEl.textContent=ph.desc;
+    if(ph.id==='launch'){
+      particles=[];explosions=[];bombers=[];
+      /* Semua diluncurkan bersamaan, SLBM sedikit lebih cepat dari ICBM */
+      spawnArcs(LAUNCH_ICBM, 0.0018);
+      spawnArcs(LAUNCH_SLBM, 0.0026); /* kapal selam lebih dekat, lebih cepat */
+      spawnBombers(LAUNCH_BOMBER);
+    }
+    if(ph.id==='impact'){
+      /* spawn extra ledakan besar di semua target */
+      Object.values(TARGETS).forEach(tgts=>tgts.forEach(coord=>{
+        const xy=proj(coord);if(!xy)return;
+        explosions.push({x:xy[0],y:xy[1],r:0,mr:28,col:'rgba(255,100,30,',life:1});
+      }));
+    }
+  }
+
+  if(playBtn)playBtn.addEventListener('click',()=>{
+    if(playing){playing=false;playBtn.textContent='▶ LANJUT';}
+    else{playing=true;playBtn.textContent='⏸ JEDA';if(phaseIdx===0&&phaseT===0)onPhase();}
+  });
+  if(resetBtn)resetBtn.addEventListener('click',()=>{
+    playing=false;phaseIdx=0;phaseT=0;particles=[];explosions=[];bombers=[];lastTs=null;
+    if(playBtn)playBtn.textContent='▶ MULAI';
+    if(lblEl)lblEl.textContent='';
+    if(descEl)descEl.textContent='Tekan MULAI untuk menyaksikan skenario eskalasi nuklir multipolar.';
+  });
+
+  async function init(){
+    resize();buildProj();
+    if(!window.__kbdiWorld){
+      try{const topo=await d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');window.__kbdiWorld=topojson.feature(topo,topo.objects.countries);}
+      catch(e){window.__kbdiWorld={type:'FeatureCollection',features:[]};}
+    }
+    world=window.__kbdiWorld;
+    if(descEl)descEl.textContent='Tekan MULAI untuk menyaksikan skenario eskalasi nuklir multipolar.';
+    requestAnimationFrame(tick);
+  }
+  window.addEventListener('resize',()=>{resize();buildProj();});
+  init();
+})();
+</script>
+<script>
+  const savedTheme = localStorage.getItem('kbdi-theme');
+  if (savedTheme === 'light') document.documentElement.classList.add('light');
+
+  fetch('https://edukbdi.github.io/header.html')
+    .then(r => r.text())
+    .then(html => {
+      document.body.insertAdjacentHTML('afterbegin', html);
+      const header = document.getElementById('kbdi-header');
+      if (savedTheme === 'light') header.classList.add('kbdi-light');
+      document.getElementById('kbdiThemeToggle').addEventListener('click', function() {
+        const isLight = document.documentElement.classList.toggle('light');
+        header.classList.toggle('kbdi-light', isLight);
+        localStorage.setItem('kbdi-theme', isLight ? 'light' : 'dark');
+        const footer = document.getElementById('kbdi-footer');
+        if (footer) footer.classList.toggle('kbdi-light', isLight);
+      });
+    });
+
+  fetch('https://edukbdi.github.io/footer.html')
+    .then(r => r.text())
+    .then(html => {
+      document.body.insertAdjacentHTML('beforeend', html);
+      const footer = document.getElementById('kbdi-footer');
+      if (footer && savedTheme === 'light') footer.classList.add('kbdi-light');
+    });
+</script>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
